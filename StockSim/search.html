@@ -2,11 +2,13 @@
   <head>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
-    <link href='style.css' rel='stylesheet'>
+    <link href='css/style.css' rel='stylesheet'>
+    <link href='css/model-u.css' rel='stylesheet'>
     <title>Search a Stock</title>
-    <script src="jquery-3.1.1.min.js"></script>
-    <script src="app.js"></script>
-	<script src="dropDown.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.ajax-cross-origin.min.js"></script>
+    <script src="js/app.js"></script>
+	<script src="js/dropDown.js"></script>
   </head>
   <body>
     <div class="scroll-pane">
@@ -33,14 +35,15 @@
         <i class="fa fa-bars"></i>
         Navigation
       </div>
-      <div class="image-container"><img src="icon/logo.png" align="center"></div>
-      <div class="container">
+      <div id="w">
+        <div id="content">
+          <img src="icon/logo.png">
+          <h1>Search Shares</h1>
           <div id="stockTickGet">
-            Ticker: <input type="text"  id="tickBox" list="options"/>
-            <button onclick="StockPriceTicker()" id="tickerSubmit">Submit</button>
+            Ticker: <input type="text" id="tickBox" list="options"/>
+            <button onclick="StockPriceTicker()" id="tickerSubmit" class="button">Submit</button>
 			<datalist id="options"></datalist>
           </div>
-          
           <div id='showStockTick' class='stockTicker'>
           </div>
           <div id='stockChart'>
@@ -50,7 +53,16 @@
           <div id="result">
           </div>
           
+          <button onclick=" " id="buyShares" class="button">Buy Shares</button>
+          <div id="modalBuy" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+          </div> 
+          <button onclick=" " id="tickerSubmit" class="button">Add to Watch List</button>
           
+        </div>
       </div>
     </div>
     </div>
